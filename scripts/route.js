@@ -24,10 +24,13 @@ angular.module('juiceApp').config(function($routeProvider) {
         })
         .when('/about', {
             templateUrl: 'templates/about.html'
+
           
         })
         .when('/contact', {
-            templateUrl: 'templates/contact.html'
+            templateUrl: 'templates/contact.html',
+            controller:'ContactController',
+            controllerAs:'ContactCtrl'
             
         })
 

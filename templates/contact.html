@@ -1,4 +1,42 @@
 <h1>Contact</h1>
-
 <hr>
-
+<div>
+</div>
+<form name="userForm" novalidate>
+	<div class="form-group" showErrors >
+		<label>First Name:
+			<input type="text" class="form-control" name="firstname" ng-model="user.fname" placeholder="{{user.fname}}" required />
+		</label>
+	</div>
+	<div class="form-group" showErrors >
+		<label>Last Name:
+			<input type="text" class="form-control" name="lastname" ng-model="user.lname" placeholder="{{user.lname}}" required />
+		</label>
+	</div>
+	<div class="form-group" showErrors >
+		<label>Email Address:
+			<input type="email" class="form-control" name="UserEmail" ng-model="user.email" placeholder="{{user.email}}" required />
+		</label>
+	</div>
+	<div class="form-group">
+		<label for="messages">Messages:</label>
+		<textarea class="form-control" rows="5" id="messages" ng-model="user.messages" ></textarea>
+	</div>
+	<div>
+		<div class="form-group">
+			<label>Preview:</label>
+			<div>
+				<span>  {{user.fname}} </span>
+				<br>
+				<span>  {{user.lname}} </span>
+				<br>
+				<span>  {{user.email}} </span>
+				
+				<br>
+				<span>  {{user.messages}} </span>
+				
+				<br>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
