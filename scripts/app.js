@@ -1,6 +1,6 @@
 var juiceApp = angular.module("juiceApp", ['ngRoute', 'ngMessages']);
 
-var globalurlJSON = "/juice_project/juiceDataJSON.json";
+var globalurlJSON = "/juiceDataJSON.json";
 
 juiceApp.controller("recipesController", function($http,$routeParams) {
 
