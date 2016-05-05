@@ -3,20 +3,30 @@
 <div>
 </div>
 <form name="userForm" novalidate>
-	<div class="form-group" showErrors >
+	<div class="form-group" ng-class="{ 'has-error': userForm.firstname.$invalid }" >
 		<label>First Name:
 			<input type="text" class="form-control" name="firstname" ng-model="user.fname" placeholder="{{user.fname}}" required />
 		</label>
+		<div ng-messages="userForm.firstname.$error" style="color:maroon" role="alert">
+			<div ng-message="required">You did not enter a first name field</div>
+		</div>
 	</div>
-	<div class="form-group" showErrors >
+	<div class="form-group" ng-class="{ 'has-error': userForm.lastname.$invalid }" >
 		<label>Last Name:
 			<input type="text" class="form-control" name="lastname" ng-model="user.lname" placeholder="{{user.lname}}" required />
 		</label>
+
+		<div ng-messages="userForm.lastname.$error" style="color:maroon" role="alert">
+			<div ng-message="required">You did not enter a last name field</div>
+		</div>
 	</div>
-	<div class="form-group" showErrors >
+	<div class="form-group" ng-class="{ 'has-error': userForm.UserEmail.$invalid }" >
 		<label>Email Address:
 			<input type="email" class="form-control" name="UserEmail" ng-model="user.email" placeholder="{{user.email}}" required />
 		</label>
+		<div ng-messages="userForm.UserEmail.$error" style="color:maroon" role="alert">
+			<div ng-message="required">You did not enter an email field</div>
+		</div>
 	</div>
 	<div class="form-group">
 		<label for="messages">Messages:</label>
@@ -38,5 +48,5 @@
 				<br>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" ng-click="submitClick()" class="btn btn-default">Submit</button>
 	</form>
