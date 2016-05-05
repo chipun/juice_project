@@ -4,11 +4,17 @@
     height: auto;    margin-right: 10px;
 ">
 Recipes</h1></div>
+<div class="input-group">
+	<label>Search:</label>
+	<input type="text" ng-model="searchText" class="form-control" placeholder="Search for...">
+</div>
+<br>
 
+<div class="list-group" ng-repeat="item in recipesCtrl.recipes | filter:searchText">
 
+<a href="#" class="list-group-item">
+		{{item}}
+	</a>
 
-<div ng-repeat="item in recipesCtrl.recipes">
-
-<span>{{item}}</span>
 
 </div>
