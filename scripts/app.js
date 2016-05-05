@@ -1,24 +1,24 @@
 var juiceApp = angular.module("juiceApp", ['ngRoute', 'ngMessages']);
 
-juiceApp.controller("recipesController", function($http) {
+juiceApp.controller("recipesController", function($http,$routeParams) {
     this.recipes = ['Adios Coffee', 'Apple Crisp', 'Appleberry Lush', 'Asparagus Delight ', 'Beets and Treats'];
 });
 
-juiceApp.controller("healthController", function($http) {
+juiceApp.controller("healthController", function($http,$routeParams) {
 	
     var controller = this;
 
-	$http({method:"GET", url:"/juice_project/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
+	$http({method:"GET", url:"/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
 		var list = data.healthData.healths;
 		controller.healthdata = list;
 	});
 
 });
 
-juiceApp.controller("benefitsController", function($http) {
+juiceApp.controller("benefitsController", function($http,$routeParams) {
 	var controller = this;
 
-	$http({method:"GET", url:"/juice_project/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
+	$http({method:"GET", url:"/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
 		var list = data.vegData.vegetables;
 		controller.benefits = list;
 	});
@@ -26,11 +26,11 @@ juiceApp.controller("benefitsController", function($http) {
 });
 
 
-juiceApp.controller("ingredientsController", function($http) {
+juiceApp.controller("ingredientsController", function($http, $routeParams) {
 
 	var controller = this;
 
-	$http({method:"GET", url:"/juice_project/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
+	$http({method:"GET", url:"/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
 		var list = data.fruitData.fruits;
 		controller.ingredients = list;
 	});

@@ -10,7 +10,7 @@ Ingredients</h1></div>
 </div>
 <br>
 <div class="list-group" ng-repeat="item in ingCtrl.ingredients | filter:searchText">
-	<a href="#" class="list-group-item">
+	<a href="#/ingredients/{{item}}" class="list-group-item">
 		{{item}}
 	</a>
 </div>

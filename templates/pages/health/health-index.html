@@ -13,7 +13,7 @@
 
 <div class="list-group" ng-repeat="item in healthCtrl.healthdata | filter:searchText">
 
-<a href="#" class="list-group-item">
+<a href="#/health/{{item}}" class="list-group-item">
 		{{item}}
 	</a>
 

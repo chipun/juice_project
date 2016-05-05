@@ -12,7 +12,7 @@
 <br>
 
 <div class="list-group" ng-repeat="item in benCtrl.benefits | filter:searchText">
-		<a href="#" class="list-group-item">
+		<a href="#/benefits/{{item}}" class="list-group-item">
 		{{item}}
 	</a>
 </div>
