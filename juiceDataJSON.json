@@ -5,6 +5,10 @@
             "Alzheimer's Prevention", "Antioxidants", "Cancer Prevention", "Arthritis", "Breast Cancer"
         ]
     },
+     "recipesData": {
+        "description": "A list of recipes.",
+        "recipes": ["Adios Coffee", "Apple Crisp", "Appleberry Lush", "Asparagus Delight", "Beets and Treats"]
+    },
     "fruitData": {
         "description": "A list of fruits.",
         "fruits": [
