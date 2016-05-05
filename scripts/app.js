@@ -5,19 +5,39 @@ juiceApp.controller("recipesController", function($http) {
 });
 
 juiceApp.controller("healthController", function($http) {
-    this.healthdata = ['Alzheimer"s Prevention', 'Antioxidants', 'Cancer Prevention', 'Arthritis', 'Breast Cancer'];
+	
+    var controller = this;
+
+	$http({method:"GET", url:"/juiceDataJSON.json"}).success(function(data){
+		var list = data.healthData.healths;
+		controller.healthdata = list;
+	});
+
 });
 
 juiceApp.controller("benefitsController", function($http) {
-    this.benefits = ['carrot', 'orange', 'grape', 'kiwi', 'ginger'];
+	var controller = this;
+
+	$http({method:"GET", url:"/juiceDataJSON.json"}).success(function(data){
+		var list = data.vegData.vegetables;
+		controller.benefits = list;
+	});
+
 });
 
 
 juiceApp.controller("ingredientsController", function($http) {
-    this.ingredients = ['carrot', 'orange', 'grape', 'kiwi', 'ginger'];
+
+	var controller = this;
+
+	$http({method:"GET", url:"/juiceDataJSON.json"}).success(function(data){
+		var list = data.fruitData.fruits;
+		controller.ingredients = list;
+	});
+
 });
 
-juiceApp.controller("ContactController", ['$scope', '$window', function($scope, $window) {
+juiceApp.controller("contactController", ['$http','$scope', '$window', function($http, $scope, $window) {
 
     $scope.submitClick = function() {
 
@@ -36,7 +56,8 @@ juiceApp.controller("ContactController", ['$scope', '$window', function($scope, 
         $scope.user = {
             fname: '',
             lname: '',
-            email: ''
+            email: '',
+            messages:''
         };
     };
 

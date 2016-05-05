@@ -29,8 +29,8 @@ angular.module('juiceApp').config(function($routeProvider) {
         })
         .when('/contact', {
             templateUrl: 'templates/contact.html',
-            controller:'ContactController',
-            controllerAs:'ContactCtrl'
+            controller:'contactController',
+            controllerAs:'contactCtrl'
             
         })
 

@@ -3,6 +3,16 @@
 	width: 100px;
 	height: auto;
 "> Benefits</h1></div>
-<div ng-repeat="ben in benCtrl.benefits">
-	<span>{{ben}}</span>
+
+<div class="input-group">
+	<label>Search:</label>
+	<input type="text" ng-model="searchText" class="form-control" placeholder="Search for...">
+</div>
+
+<br>
+
+<div class="list-group" ng-repeat="item in benCtrl.benefits | filter:searchText">
+		<a href="#" class="list-group-item">
+		{{item}}
+	</a>
 </div>
