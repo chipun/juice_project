@@ -8,7 +8,7 @@ juiceApp.controller("healthController", function($http) {
 	
     var controller = this;
 
-	$http({method:"GET", url:"/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
+	$http({method:"GET", url:"/juice_project/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
 		var list = data.healthData.healths;
 		controller.healthdata = list;
 	});
@@ -18,7 +18,7 @@ juiceApp.controller("healthController", function($http) {
 juiceApp.controller("benefitsController", function($http) {
 	var controller = this;
 
-	$http({method:"GET", url:"/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
+	$http({method:"GET", url:"/juice_project/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
 		var list = data.vegData.vegetables;
 		controller.benefits = list;
 	});
@@ -30,7 +30,7 @@ juiceApp.controller("ingredientsController", function($http) {
 
 	var controller = this;
 
-	$http({method:"GET", url:"/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
+	$http({method:"GET", url:"/juice_project/juiceDataJSON.json", headers:{'Content-Type':'application/json'}}).success(function(data){
 		var list = data.fruitData.fruits;
 		controller.ingredients = list;
 	});
