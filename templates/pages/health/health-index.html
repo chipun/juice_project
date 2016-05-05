@@ -5,10 +5,16 @@
     height: auto;    margin-right: 10px;
 ">Health</h1></div>
 
+<div class="input-group">
+	<label>Search:</label>
+	<input type="text" ng-model="searchText" class="form-control" placeholder="Search for...">
+</div>
+<br>
 
+<div class="list-group" ng-repeat="item in healthCtrl.healthdata | filter:searchText">
 
-<div ng-repeat="item in healthCtrl.healthdata">
-
-<span>{{item}}</span>
+<a href="#" class="list-group-item">
+		{{item}}
+	</a>
 
 </div>
