@@ -11,7 +11,7 @@
 
 <br>
 
-<div class="list-group" ng-repeat="item in benCtrl.benefits | filter:searchText">
+<div class="list-group"  ng-repeat="item in benCtrl.benefits | filter:searchText" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}" >
 		<a href="#/benefits/{{item}}" class="list-group-item">
 		{{item}}
 	</a>
