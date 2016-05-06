@@ -3,7 +3,7 @@ var juiceApp = angular.module("juiceApp", ['ngRoute', 'ngMessages']);
 juiceApp.factory('apiFactory', function($http, $location, $q) {
 
     var _baseAbsUrl = $location.absUrl();
-    var _baseURL = "/juiceDataJSON.json";
+    var _baseURL = "/juice_project/juiceDataJSON.json";
 
     var _httpOptions = {
         method: "GET",
