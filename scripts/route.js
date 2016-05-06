@@ -3,7 +3,15 @@ angular.module('juiceApp').config(function($routeProvider) {
             templateUrl: 'templates/content-index.html'
         })
         .when('/benefits/:name?', {
-            templateUrl: 'templates/pages/benefits/benefits-index.html',
+            templateUrl: function(params){
+                
+                if(params.name)
+                {
+                    return 'templates/pages/benefits/benefits-detail.html';
+                }
+
+                return 'templates/pages/benefits/benefits-index.html';
+            },
             controller: 'benefitsController',
             controllerAs: 'benCtrl'
         })
