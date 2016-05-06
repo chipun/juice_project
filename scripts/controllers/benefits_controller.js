@@ -12,3 +12,12 @@ controllerApp.controller("benefitsController", function($http, $scope, $routePar
         });
     }
 });
+
+
+controllerApp.controller("benefitsDetailController", function($http, $scope, $routeParams, apiFactory) {
+
+    if ($routeParams.name) {
+        $scope.detailname = $routeParams.name
+    }
+});
+

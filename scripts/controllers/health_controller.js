@@ -8,3 +8,10 @@ controllerApp.controller("healthController", function($http, $scope, $routeParam
         controller.healthdata = data;
     });
 });
+
+controllerApp.controller("healthDetailController", function($http, $scope, $routeParams, apiFactory) {
+
+    if ($routeParams.name) {
+        $scope.detailname = $routeParams.name
+    }
+});

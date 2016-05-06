@@ -9,3 +9,11 @@ controllerApp.controller("recipesController", function($http, $scope, $routePara
     });
 
 });
+
+
+controllerApp.controller("recipesDetailController", function($http, $scope, $routeParams, apiFactory) {
+
+    if ($routeParams.name) {
+        $scope.detailname = $routeParams.name
+    }
+});
